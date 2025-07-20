@@ -15,9 +15,12 @@ type Game struct {
 	frame  *ebiten.Image
 	screen render.Renderable
 	pacman pacman.Pacman
+	tick   int
 }
 
 func (g *Game) Update() error {
+	g.pacman.Update(g.tick)
+	g.tick++
 	return nil
 }
 

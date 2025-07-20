@@ -86,7 +86,7 @@ func (renderer *Renderable) DrawPart(xp int, yp int, xp2 int, yp2 int, w int, h 
 				if yFlip {
 					pixel = otherRenderable.GetPixel(((w-1)-x)+xp2, ((h-1)-y)+yp2)
 				} else {
-					pixel = otherRenderable.GetPixel(((w-1)-x)+xp2, y+yp2)
+					pixel = otherRenderable.GetPixel((w-x)+xp2, y+yp2)
 				}
 			} else {
 				if yFlip {
