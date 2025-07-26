@@ -9,8 +9,8 @@ import (
 
 type Image struct {
 	Pixels []byte
-	Width  int
-	Height int
+	Width  uint16
+	Height uint16
 }
 
 func LoadImage(path string) Image {
@@ -27,12 +27,12 @@ func LoadImage(path string) Image {
 
 	width := img.Bounds().Dx()
 	height := img.Bounds().Dy()
-	pixels := make([]byte, width*height*4)
+	pixels := make([]byte, width*height<<2)
 
 	for y := 0; y < height; y++ {
 		for x := 0; x < width; x++ {
 			c := color.RGBAModel.Convert(img.At(x, y)).(color.RGBA)
-			i := (y*width + x) * 4
+			i := (y*width + x) << 2
 			pixels[i+0] = c.R
 			pixels[i+1] = c.G
 			pixels[i+2] = c.B
@@ -42,7 +42,7 @@ func LoadImage(path string) Image {
 
 	return Image{
 		Pixels: pixels,
-		Width:  width,
-		Height: height,
+		Width:  uint16(width),
+		Height: uint16(height),
 	}
 }

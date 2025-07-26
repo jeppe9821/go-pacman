@@ -13,7 +13,7 @@ const WINDOW_HEIGHT int = 564
 
 type Game struct {
 	frame  *ebiten.Image
-	screen render.Renderable
+	screen render.Screen
 	pacman pacman.Pacman
 	tick   int
 }
@@ -42,7 +42,7 @@ func (g *Game) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeigh
 
 func main() {
 	game := &Game{
-		screen: render.Create(WINDOW_WIDTH, WINDOW_HEIGHT, nil),
+		screen: render.Create(uint(WINDOW_WIDTH), uint(WINDOW_HEIGHT), nil),
 		pacman: pacman.Create(),
 	}
 
