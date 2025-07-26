@@ -1,5 +1,9 @@
 package render
 
+const (
+	RGBA = 4
+)
+
 type Screen struct {
 	pixels []byte
 	width  uint
@@ -14,9 +18,9 @@ type Pixel struct {
 }
 
 // If pixels is nil it will generate an empty pixels array
-func Create(width uint, height uint, pixels []byte) Screen {
+func CreateScreen(width uint, height uint, pixels []byte) Screen {
 	if pixels == nil {
-		pixels = make([]byte, width*height*4)
+		pixels = make([]byte, width*height*RGBA)
 	}
 
 	return Screen{

@@ -3,11 +3,10 @@ package pacman
 import (
 	_ "embed"
 
-	"github.com/jeppe9821/go-pacman/audio"
-	"github.com/jeppe9821/go-pacman/pacman/pacactor"
-	"github.com/jeppe9821/go-pacman/pacman/pacmap"
-	"github.com/jeppe9821/go-pacman/pacman/pacmath"
-	"github.com/jeppe9821/go-pacman/render"
+	"github.com/jeppe9821/go-pacman/src/audio"
+	"github.com/jeppe9821/go-pacman/src/pacman/pacactor"
+	"github.com/jeppe9821/go-pacman/src/pacman/pacmap"
+	"github.com/jeppe9821/go-pacman/src/render"
 )
 
 type Pacman struct {
@@ -17,7 +16,7 @@ type Pacman struct {
 	spritesheet    render.Spritesheet8Bit
 }
 
-func Create() Pacman {
+func CreateGame() Pacman {
 	grid := [31][28]uint8{ //28x31
 		{2, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 44, 43, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 1},
 		{4, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 26, 25, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 3},
@@ -56,10 +55,10 @@ func Create() Pacman {
 		beginningAudio: audio.CreateWavStream("assets/sound/pacman_beginning.wav"),
 		moveAudio:      audio.CreateWavStream("assets/sound/pacman_waka.wav"),
 		tileMap: World{
-			player: pacactor.CreateActor(pacmath.TilePosition{X: 23, Y: 23}, &pacactor.PlayerBehaviour{
+			player: pacactor.CreateActor(pacmap.TilePosition{X: 23, Y: 23}, &pacactor.PlayerBehaviour{
 				AnimationBehaviour: pacactor.CreateNewAnimationBehaviour(0, 2, 8),
 			}),
-			blinky:  pacactor.CreateActor(pacmath.TilePosition{X: 13, Y: 23}, &pacactor.BlinkyChaseBehaviour{}),
+			blinky:  pacactor.CreateActor(pacmap.TilePosition{X: 13, Y: 23}, &pacactor.BlinkyChaseBehaviour{}),
 			TileMap: pacmap.TileMap{Grid: grid},
 		},
 		spritesheet: render.LoadFromFile("assets/spritesheet.png"),

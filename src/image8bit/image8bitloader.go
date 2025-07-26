@@ -1,4 +1,4 @@
-package utils
+package image8bit
 
 import (
 	"image"
@@ -9,8 +9,8 @@ import (
 
 type Image struct {
 	Pixels []byte
-	Width  uint16
-	Height uint16
+	Width  uint8
+	Height uint8
 }
 
 func LoadImage(path string) Image {
@@ -42,7 +42,7 @@ func LoadImage(path string) Image {
 
 	return Image{
 		Pixels: pixels,
-		Width:  uint16(width),
-		Height: uint16(height),
+		Width:  uint8(width),
+		Height: uint8(height),
 	}
 }

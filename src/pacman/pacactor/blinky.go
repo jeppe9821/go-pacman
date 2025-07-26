@@ -1,8 +1,8 @@
 package pacactor
 
 import (
-	"github.com/jeppe9821/go-pacman/pacman/pacmap"
-	"github.com/jeppe9821/go-pacman/render"
+	"github.com/jeppe9821/go-pacman/src/pacman/pacmap"
+	"github.com/jeppe9821/go-pacman/src/render"
 )
 
 type BlinkyChaseBehaviour struct {

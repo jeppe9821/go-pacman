@@ -1,14 +1,9 @@
 package pacman
 
 import (
-	"github.com/jeppe9821/go-pacman/pacman/pacactor"
-	"github.com/jeppe9821/go-pacman/pacman/pacmap"
-	"github.com/jeppe9821/go-pacman/render"
-)
-
-const (
-	TILE_EMPTY = 45
-	TILE_FOOD  = 46
+	"github.com/jeppe9821/go-pacman/src/pacman/pacactor"
+	"github.com/jeppe9821/go-pacman/src/pacman/pacmap"
+	"github.com/jeppe9821/go-pacman/src/render"
 )
 
 type World struct {

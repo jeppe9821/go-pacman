@@ -2,9 +2,9 @@ package pacactor
 
 import (
 	"github.com/hajimehoshi/ebiten/v2"
-	"github.com/jeppe9821/go-pacman/pacman/pacmap"
-	"github.com/jeppe9821/go-pacman/pacman/pacmath"
-	"github.com/jeppe9821/go-pacman/render"
+	"github.com/jeppe9821/go-pacman/src/pacman/pacmap"
+	"github.com/jeppe9821/go-pacman/src/pacman/pacmath"
+	"github.com/jeppe9821/go-pacman/src/render"
 )
 
 type PlayerBehaviour struct {

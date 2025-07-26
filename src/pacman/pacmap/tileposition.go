@@ -1,7 +1,9 @@
-package pacmath
+package pacmap
 
 const (
-	ONE_TILE = 3
+	ONE_TILE   = 3
+	TILE_EMPTY = 0
+	TILE_FOOD  = 45
 )
 
 type TilePosition struct {

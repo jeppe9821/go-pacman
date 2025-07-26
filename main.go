@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/hajimehoshi/ebiten/v2"
-	"github.com/jeppe9821/go-pacman/pacman"
-	"github.com/jeppe9821/go-pacman/render"
+	"github.com/jeppe9821/go-pacman/src/pacman"
+	"github.com/jeppe9821/go-pacman/src/render"
 )
 
 const WINDOW_WIDTH int = 448
@@ -42,8 +42,8 @@ func (g *Game) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeigh
 
 func main() {
 	game := &Game{
-		screen: render.Create(uint(WINDOW_WIDTH), uint(WINDOW_HEIGHT), nil),
-		pacman: pacman.Create(),
+		screen: render.CreateScreen(uint(WINDOW_WIDTH), uint(WINDOW_HEIGHT), nil),
+		pacman: pacman.CreateGame(),
 	}
 
 	ebiten.SetWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT)
